@@ -24,12 +24,6 @@ function firstName(people){
     });
 }
 
-var lastNames = function(people){
-    return map(people,function(person){
-        return person.name.last;
-    }); 
-}
-
 
 var lastNames = function(people){
     return map(people,function(person){
@@ -80,9 +74,47 @@ var maximums = function(arrays){
 
 //More Practice
 
-var exponentials(numbers){
-    return map (arr,function(v,i){
-        return v**i
+var exponentials = function(numbers){
+    return map(numbers,function(v){
+        return v**v
     })
 }
+
+//2
+function reverse(string){
+    var x = string.split('');
+    var result =[];
+  for (var i= x.length-1; i>=0; i--){
+      result.push(x[i])
+  }
+    return result.join('')
+}
+
+function reverseWords(string){
+    var x = string.split(' ');
+    var result =[];
+  for (var i=0; i<x.length; i++){
+      var y = reverse(x[i])
+      result.push(y)
+  }
+    return result.join(' ')
+}
+
+
+//3
+var pluck = function(arrayOfObjects,key){
+    return map(arrayOfObjects,function(obj){
+        return obj[key]
+    })
+}
+
+var parseCSV = function(csv){
+    var X = csv.split('/n');
+    return map(X,function(x){
+        var y= x.split(',')
+        return y
+    })
+}// array not an object
+
+
 
